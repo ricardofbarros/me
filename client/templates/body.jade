@@ -18,7 +18,9 @@ body
           a.smoothScroll(href='#contacts', title='Contacts')
             i.fa.fa-envelope 
               span Contacts
-  section#about(name='about')
-  section#resume(name='resume')
-  section#skills(name='skills')
-  section#contacts(name='contacts')
+  div#main-container.container-fluid
+    div.row
+      section#about.col-md-12(name='about')
+      section#resume.col-md-12(name='resume')
+      section#skills.col-md-12(name='skills')
+      section#contacts.col-md-12(name='contacts')
