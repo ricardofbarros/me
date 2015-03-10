@@ -1,6 +1,9 @@
 @import '../_variables'
 @import '../_mixins'
+@import './bootstrap.styl'
 
+body
+  color: white !important
 
 .center
   text-align: center !important
@@ -8,66 +11,12 @@
   margin: 0 auto !important
   display: inline-block !important
 
+#main-container
+  padding-top: 56px
 
-/* Start Bootstrap menu */
-/* navbar */
-.navbar-default
-  background-color: $navbar-background
-  border-color: $navbar-border
-
-/* title */
-.navbar-default .navbar-brand
-  color: $navbar-text
-  :hover, :focus
-    color: $navbar-brand-hover
-
-
-.navbar-default .navbar-nav
-  > li
-    > a
-      color: $navbar-text
-      &:hover, &:focus
-        color: $navbar-text-hover
-  > .active
-    > a
-    > a:hover
-    > a:focus
-      color: $navbar-text-active
-      background-color: $navbar-border
-  > .open
-    > a
-    > a:hover
-    > a:focus
-      color: $navbar-text-active
-      background-color: $navbar-active
-      .caret
-        border-top-color: $navbar-text-active
-        border-bottom-color: $navbar-text-active
-  > .dropdown
-    > a
-      .caret
-        border-top-color: $navbar-text
-        border-bottom-color: $navbar-text
-    > a:hover, a:focus
-      .caret
-        border-top-color: $navbar-text-hover
-        border-bottom-color: $navbar-text-hover
-
-
-.navbar-default .navbar-toggle
-  border-color: $navbar-toggle
-  &:hover, &:focus
-    border-color: $navbar-toggle
-  .icon-bar
-    background-color: $navbar-toggle-icon
-
-
-@media (max-width: 767px)
-  .navbar-default .navbar-nav .open .dropdown-menu
-    > li
-      > a
-        color: $navbar-text
-        &:hover, &:focus
-          color: $navbar-text-hover
-
-/* End bootstrap menu */
+#about
+  background: url('static/foto.jpg') no-repeat center center fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
