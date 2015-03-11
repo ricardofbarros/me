@@ -4,34 +4,21 @@
 *   support vh,vw,vmin or vmax measures
 */
 
-/* Bootstrap media queries logic */
-
 @media (max-width: $screen-xs)
-  body
-    font-size: 14px
-  h1
-    font-size: 20px
+  .section
+    height: $height-res
+
 
 @media (min-width: $screen-xs + 1px) and (max-width: $screen-sm)
-  body
-    font-size: 16px
-  h1
-    font-size: 30px
+  .section
+    height: $height-res * 2
 
 
 @media (min-width: $screen-sm + 1px) and (max-width: $screen-md)
-  body
-    font-size: 18px
-  nav
-    font-size: 16px
-  h1
-    font-size: 40px
+  .section
+    height: $height-res * 3
 
 
 @media (min-width: $screen-md + 1px)
-  body
-    font-size: 20px
-  nav
-    font-size: 18px
-  h1
-    font-size: 50px
+  .section
+    height: $height-res * 4

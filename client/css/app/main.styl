@@ -3,10 +3,22 @@
 @import './nav'
 @import './responsive'
 
+// Fallback if view port measures dont work
+@import './fallback'
+
 body
   color: white
-  font-family: 'Raleway', sans-serif
+  font-family: 'Lato', sans-serif
 
+h1
+  font-family: 'Yanone Kaffeesatz', sans-serif
+  font-weight: 700
+
+.shade
+  text-shadow: 0px 0px 6px #000000
+
+a, a:hover
+  color: white
 
 .center
   text-align: center
@@ -17,9 +29,28 @@ body
 #main-container
   padding-top: 56px
 
-#about
-  background: url('static/foto.jpg') no-repeat center center fixed
-  -webkit-background-size: cover
-  -moz-background-size: cover
-  -o-background-size: cover
-  background-size: cover
+.section
+  height: 100vh
+  opacity(0.8)
+  -webkit-background-size: contain
+  -moz-background-size: contain
+  -o-background-size: contain
+  background-size: contain
+
+#about, #intro
+  background-image: url('static/foto.jpg')
+  background-size: 100% 0% !important
+  background-repeat: no-repeat
+
+#resume
+  background-color: #C63D0F
+
+#skills
+  background-color: #FDF3E7
+
+#contacts
+  background-color: #558C89
+
+.lob
+  font-family: 'Lato', sans-serif
+  font-weight: 700
