@@ -196,3 +196,7 @@ background-size($size)
   -moz-background-size: $size
   -o-background-size: $size
   background-size: $size
+
+opacity($n)
+  opacity $n
+  filter unquote('alpha(opacity=' + $n +')')
