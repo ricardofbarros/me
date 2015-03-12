@@ -5,22 +5,25 @@ body
         li
           a.smoothScroll(href='#about', title='About')
             i.fa.fa-user 
-              span About
+              span.lob About
         li
           a.smoothScroll(href='#resume', title='Resume')
             i.fa.fa-file-text 
-              span Resume
+              span.lob Resume
         li
           a.smoothScroll(href='#skills', title='Skills')
             i.fa.fa-star 
-              span Skills
+              span.lob Skills
         li
           a.smoothScroll(href='#contacts', title='Contacts')
             i.fa.fa-envelope 
-              span Contacts
+              span.lob Contacts
   div#main-container.container-fluid
     div.row
-      section#about.col-md-12(name='about')
-      section#resume.col-md-12(name='resume')
-      section#skills.col-md-12(name='skills')
-      section#contacts.col-md-12(name='contacts')
+      section#about.col-md-12.section(name='about')
+    div.row
+      section#resume.col-md-12.section(name='resume')
+    div.row
+      section#skills.col-md-12.section(name='skills')
+    div.row
+      section#contacts.col-md-12.section(name='contacts')
