@@ -10,6 +10,8 @@ var dom = require('ampersand-dom')
 var templates = require('../templates')
 var setFavicon = require('favicon-setter')
 var config = require('clientconfig')
+
+// Partials
 var AboutView = require('./sections/about')
 var ResumeView = require('./sections/resume')
 var SkillsView = require('./sections/skills')
