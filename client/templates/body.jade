@@ -1,20 +1,20 @@
 body
   nav.navbar.navbar-default.navbar-fixed-top
     div.container(style="text-align: center")
-      ul.nav.navbar-nav.center
-        li
+      ul.nav.navbar-nav
+        li#about-nav.active
           a.smoothScroll(href='#about', title='About')
             i.fa.fa-user 
               span.lob About
-        li
+        li#resume-nav
           a.smoothScroll(href='#resume', title='Resume')
             i.fa.fa-file-text 
               span.lob Resume
-        li
+        li#skills-nav
           a.smoothScroll(href='#skills', title='Skills')
             i.fa.fa-star 
               span.lob Skills
-        li
+        li#contacts-nav
           a.smoothScroll(href='#contacts', title='Contacts')
             i.fa.fa-envelope 
               span.lob Contacts
