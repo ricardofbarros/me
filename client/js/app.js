@@ -1,4 +1,4 @@
-/*global app, TweenMax, ScrollMagic, TimelineMax, $*/
+/*global app, TweenMax, ScrollMagic, TimelineMax, $, Power4*/
 var log = require('bows')('app')
 var config = require('clientconfig')
 var domReady = require('domready')
@@ -28,17 +28,21 @@ module.exports = {
       // to build animations
       self.buildAnimation()
 
+      // Build effects triggered
+      // by human action minus
+      // scrolling
+      self.buildEffects()
 
       /* Event listeners */
-      $(window).on('load', function() {
+      $(window).on('load', function () {
         console.log('load removing')
 
         // Responsive quirks
         self.buildResponsiveness()
 
-        setTimeout (function () {
+        setTimeout(function () {
           console.log('scroll to top!')
-          scrollTo(0,0)
+          scrollTo(0, 0)
         }, 100)
       })
 
@@ -94,17 +98,43 @@ module.exports = {
 
     var elementsAnimation = new TimelineMax().add([
       TweenMax.to('#intro-text', 0.5, {opacity: 0}),
-      TweenMax.to('#about-text', 0.5, {opacity: 1, delay: 1 }),
-      TweenMax.to('#social-media-text', 0.5, {opacity: 1, delay: 1.5 })
+      TweenMax.to('#about-text', 0.5, {opacity: 1, delay: 0.2 }),
+      TweenMax.to('#social-media-text', 0.3, {opacity: 1, delay: 0.8 }),
+      TweenMax.to('#social-media-icons', 0.3, {opacity: 1, delay: 1 })
     ])
 
-    var sceneAbout = new ScrollMagic.Scene({ duration: 2000 })
+    var sceneAbout = new ScrollMagic.Scene({ duration: 3500 })
                     .setPin('#about')
                     .setTween(elementsAnimation)
+                    .on('enter leave', function (e) {
+                      if (e.type === 'enter') {
+                        $('#about-nav').addClass('active')
+                      } else {
+                        if ($(window).scrollTop() !== 0) {
+                          $('#about-nav').removeClass('active')
+                        }
+                      }
+                    })
 
     controller.addScene([
       sceneAbout
     ])
+  },
+  buildEffects: function () {
+    // Effect of social icon
+    $(document).on('mouseenter', '.social-icon', function () {
+      TweenMax.to($(this), 0.5, {
+        scale: 1.35,
+        force3D: true,
+        ease: Power4.easeOut
+      })
+    }).on('mouseleave', '.social-icon', function () {
+      TweenMax.to($(this), 0.5, {
+        scale: 1,
+        force3D: true,
+        ease: Power4.easeOut
+      })
+    })
   },
   buildResponsiveness: function () {
     // Social media stuff top position
@@ -112,7 +142,8 @@ module.exports = {
     var aboutTextHeight = $('#about-text').height()
 
     $('#social-media-text').css('top', aboutTextHeight + 'px')
-    $('#social-icons').css('top', aboutTextHeight + 'px')
+    $('#social-media-icons').css('top',
+      parseInt(aboutTextHeight + $('#social-media-text').height(), 10) + 'px')
   }
 }
 
